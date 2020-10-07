@@ -1,3 +1,8 @@
+@import './assets/typography.scss';
+
+body {
+  margin: 0;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -17,4 +22,9 @@
       color: #42b983;
     }
   }
+}
+
+.App {
+  width: 100%;
+  background-color: $primary;
 }

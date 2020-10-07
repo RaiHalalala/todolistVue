@@ -1,0 +1,12 @@
+@import '../../assets/typography';
+
+.Header {
+  width: 100%;
+  background-color: $primary;
+
+  &__photo-profile {
+    height: 50px;
+    width: auto;
+    border-radius: 50%;
+  }
+}
