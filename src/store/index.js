@@ -1,12 +1,8 @@
 import { createStore } from 'vuex';
+import tasks from './modules/tasks';
 
 export default createStore({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
   modules: {
+    tasks,
   },
 });

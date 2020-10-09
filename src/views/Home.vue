@@ -1,9 +1,15 @@
 <template>
-  <div>1</div>
+  <Form></Form>
+  <TaskList></TaskList>
 </template>
 
 <script>
-export default {
+import TaskList from '../components/TaskList';
+import Form from '../components/Form';
 
+export default {
+  components: {
+    TaskList, Form,
+  },
 };
 </script>

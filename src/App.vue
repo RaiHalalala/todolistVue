@@ -26,4 +26,5 @@ export default {
 
 <style lang="scss">
 @import './style.scss';
+@import './normalize.scss';
 </style>
