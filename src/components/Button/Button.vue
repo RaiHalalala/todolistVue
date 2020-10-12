@@ -11,7 +11,6 @@ export default {
     isHeader: Boolean,
   },
 };
-
 </script>
 
 <style lang="scss">

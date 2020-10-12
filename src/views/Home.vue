@@ -1,6 +1,8 @@
 <template>
-  <Form></Form>
-  <TaskList></TaskList>
+  <div>
+    <Form></Form>
+    <TaskList></TaskList>
+  </div>
 </template>
 
 <script>
