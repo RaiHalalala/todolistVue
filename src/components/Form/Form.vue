@@ -1,6 +1,6 @@
 <template>
-  <form @submit="addTask">
-    <input v-model="title"/>
+  <form @submit="addTask" class="Form">
+    <input v-model="title" class="Form__input"/>
     <Button isPrimary>ADD</Button>
   </form>
 </template>
@@ -34,3 +34,13 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.Form {
+  display: flex;
+  margin: 10px;
+  &__input {
+    width: 100%;
+  }
+}
+</style>

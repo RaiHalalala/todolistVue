@@ -1,13 +1,11 @@
 <template>
-  <div class="">
-    <div>
+  <div class="main">
+    <div class="nav">
       Sorting
       Filtering
     </div>
-    <div>
-      <Form></Form>
-      <TaskList></TaskList>
-    </div>
+    <Form class="form"></Form>
+    <TaskList class="list"></TaskList>
   </div>
 </template>
 
@@ -21,3 +19,28 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+@import '../assets/_typography';
+  .main {
+    height: 100%;
+    display: grid;
+    grid-template-areas:
+      "nav form"
+      "nav list";
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 60px 1fr;
+  }
+  .nav {
+    grid-area: nav;
+    display: flex;
+    background-color: $light;
+  }
+  .list {
+    grid-area: list;
+  }
+  .form {
+    grid-area: form;
+  }
+
+</style>

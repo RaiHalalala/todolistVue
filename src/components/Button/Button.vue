@@ -23,7 +23,7 @@ export default {
 @import '../../assets/_typography';
   .btn {
     border: 0;
-    padding: 10px;
+    padding: 10px 30px;
     background-color: aqua;
     border-radius: 5px;
 
