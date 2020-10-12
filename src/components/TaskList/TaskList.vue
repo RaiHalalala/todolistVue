@@ -1,6 +1,6 @@
 <template>
-  <ul>
-    <Task v-for="task in allTasks" :key="task.id" :title="task.title"/>
+  <ul class="list-group">
+    <Task v-for="task in allTasks" :key="task.id" :task="task"/>
   </ul>
 </template>
 
@@ -9,7 +9,6 @@ import { mapGetters } from 'vuex';
 import Task from '../Task';
 
 export default {
-  name: 'taskList',
   // вариант обращения напрямую, но можно через helpers
   // computed: {
   //   allTasks() {

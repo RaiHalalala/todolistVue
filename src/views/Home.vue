@@ -1,7 +1,13 @@
 <template>
-  <div>
-    <Form></Form>
-    <TaskList></TaskList>
+  <div class="">
+    <div>
+      Sorting
+      Filtering
+    </div>
+    <div>
+      <Form></Form>
+      <TaskList></TaskList>
+    </div>
   </div>
 </template>
 
