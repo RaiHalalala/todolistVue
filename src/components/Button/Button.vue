@@ -39,6 +39,7 @@ export default {
     }
     &--icon {
       background-color: transparent;
+      padding: 0;
     }
   }
 </style>
