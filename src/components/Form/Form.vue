@@ -25,6 +25,7 @@ export default {
         iconId: 1,
         dateOfCreat: format(new Date(), 'yyyy-MM-dd'),
       };
+      debugger;
       this.$store.dispatch('fetchAddTask', newTask);
       this.title = '';
     },

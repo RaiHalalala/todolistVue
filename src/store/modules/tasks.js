@@ -22,10 +22,13 @@ export default {
   },
   mutations: {
     [SET_TASKS](state, tasks) {
-      const today = format(new Date(), 'yyyy-MM-dd');
-      const varToday = new Date();
-      varToday.setTime(varToday.getTime() + 1000 * 60 * 60 * 24);
+      const data = new Date();
+      const today = format(data, 'yyyy-MM-dd');
+      const tomorrow = format(new Date(data.getTime() + (24 * 60 * 60 * 1000)), 'yyyy-MM-dd');
+      state.tasks[0] = tasks.filter(({ dateOfCreat }) => [today, tomorrow].includes(dateOfCreat) === false);
       state.tasks[1] = tasks.filter(({ dateOfCreat }) => dateOfCreat === today);
+      debugger;
+      state.tasks[2] = tasks.filter(({ dateOfCreat }) => dateOfCreat === tomorrow);
     },
     [ADD_TASK](state, task) {
       state.tasks = [...state.tasks, task];

@@ -1,6 +1,10 @@
 <template>
   <ul class="list-group">
-    <Task v-for="task in allTasks" :key="task.id" :task="task"/>
+    <Task v-for="task in allTasks[0]" :key="task.id" :task="task"/>
+    <div class="vt"></div>
+    <Task v-for="task in allTasks[1]" :key="task.id" :task="task"/>
+    <div class="vt"></div>
+    <Task v-for="task in allTasks[2]" :key="task.id" :task="task"/>
   </ul>
 </template>
 
@@ -24,3 +28,11 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.vt {
+  height: 10px;
+  width: 100%;
+  background-color: aquamarine;
+}
+</style>
