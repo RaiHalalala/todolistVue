@@ -5,11 +5,11 @@
       tasks for today
     </div>
     <div v-if="tasksToday" class="Task-list__today">
-      <div class="done">
-        <Task v-for="task in todayDone" :key="task.id" :task="task"/>
+      <div class="not-done">
+        <Task v-for="task in todayNotDone" :key="task.id" :task="task"/>
       </div>
       <div class="done">
-        <Task v-for="task in todayNotDone" :key="task.id" :task="task"/>
+        <Task v-for="task in todayDone" :key="task.id" :task="task"/>
       </div>
     </div>
     <div class="vt" @click="onChangeView('tomorrow')">
@@ -17,11 +17,11 @@
       tasks for tomorrow
     </div>
     <div v-if="tasksTomorrow">
-      <div class="done">
-        <Task v-for="task in tomorrowDone" :key="task.id" :task="task"/>
+      <div class="not-done">
+        <Task v-for="task in tomorrowNotDone" :key="task.id" :task="task"/>
       </div>
       <div class="done">
-        <Task v-for="task in tomorrowNotDone" :key="task.id" :task="task"/>
+        <Task v-for="task in tomorrowDone" :key="task.id" :task="task"/>
       </div>
     </div>
     <div class="vt" @click="onChangeView('other')">
@@ -29,11 +29,11 @@
       other tasks
     </div>
     <div v-if="otherTasks">
-      <div class="done">
-        <Task v-for="task in otherDone" :key="task.id" :task="task"/>
+      <div class="not-done">
+        <Task v-for="task in otherNotDone" :key="task.id" :task="task"/>
       </div>
       <div class="done">
-        <Task v-for="task in otherNotDone" :key="task.id" :task="task"/>
+        <Task v-for="task in otherDone" :key="task.id" :task="task"/>
       </div>
     </div>
   </ul>
@@ -110,7 +110,10 @@ export default {
     display: flex;
   }
 }
+.not-done {
+  width: 60%;
+}
 .done {
-  width: 50%;
+  width: 40%;
 }
 </style>

@@ -1,11 +1,12 @@
 <template>
   <form @submit="addTask" class="Form">
-    <input v-model="title" class="Form__input"/>
+    <input class="Form__input" :class="{ 'Form__input--error': $v.title.$error }" v-model.trim="title" @input="setTitle($event.target.value)" />
     <Button isPrimary>ADD</Button>
   </form>
 </template>
 
 <script>
+import { required, minLength } from 'vuelidate/lib/validators';
 import { format } from 'date-fns';
 import Button from '../Button';
 
@@ -15,11 +16,21 @@ export default {
       title: '',
     };
   },
+  validations: {
+    title: {
+      required,
+      minLength: minLength(4),
+    },
+  },
   methods: {
+    setTitle(value) {
+      this.title = value;
+      this.$v.title.$touch();
+    },
     addTask(e) {
       e.preventDefault();
       const newTask = {
-        title: this.title,
+        title: this.title.trim(),
         active: false,
         favorite: false,
         iconId: 1,
@@ -42,6 +53,9 @@ export default {
   margin: 10px;
   &__input {
     width: 100%;
+    &--error {
+      border: 1x solid brown;
+    }
   }
 }
 </style>
